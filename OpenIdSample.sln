@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecuringAngularApps.API", "SecuringAngularApps.API\SecuringAngularApps.API\SecuringAngularApps.API.csproj", "{15262AA9-4B58-484C-B45F-3E3D63DD5FDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecuringAngularApps.STS", "SecuringAngularApps.API\SecuringAngularApps.STS\SecuringAngularApps.STS.csproj", "{FE8A2D50-B432-4BCB-B65C-1B204F6964BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebClient", "AngularWebClient\AngularWebClient.csproj", "{FCFF76BD-8FC6-4084-8546-312A559F0DB4}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15262AA9-4B58-484C-B45F-3E3D63DD5FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15262AA9-4B58-484C-B45F-3E3D63DD5FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15262AA9-4B58-484C-B45F-3E3D63DD5FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15262AA9-4B58-484C-B45F-3E3D63DD5FDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE8A2D50-B432-4BCB-B65C-1B204F6964BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE8A2D50-B432-4BCB-B65C-1B204F6964BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE8A2D50-B432-4BCB-B65C-1B204F6964BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE8A2D50-B432-4BCB-B65C-1B204F6964BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
