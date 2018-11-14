@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SecuringAngularApps.STS", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebClient", "AngularWebClient\AngularWebClient.csproj", "{FCFF76BD-8FC6-4084-8546-312A559F0DB4}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularStsWebApp", "AngularStsWebApp\AngularStsWebApp.csproj", "{9064D127-0575-4B3D-93DA-2AFEAD8631B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCFF76BD-8FC6-4084-8546-312A559F0DB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9064D127-0575-4B3D-93DA-2AFEAD8631B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9064D127-0575-4B3D-93DA-2AFEAD8631B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9064D127-0575-4B3D-93DA-2AFEAD8631B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9064D127-0575-4B3D-93DA-2AFEAD8631B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
