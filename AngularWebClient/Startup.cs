@@ -1,10 +1,14 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SecuringAngularApps.API.Model;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace AngularWebClient
 {
@@ -20,7 +24,37 @@ namespace AngularWebClient
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ProjectDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("ProjectDbContext")));
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllRequests", builder =>
+                {
+                    builder.AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowAnyOrigin()
+                    .AllowCredentials();
+                });
+            });
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                 .AddJwtBearer(options =>
+                 {
+                     // base-address of your identityserver
+                     //options.Authority = "https://securingangularappscourse-sts.azurewebsites.net/";
+                     options.Authority = "http://localhost:4242/";
+                     options.RequireHttpsMetadata = false;
+                     // name of the API resource
+                     options.Audience = "projects-api";
+                 });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "SecuringAngularApps", Version = "v1" });
+            });
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -42,7 +76,20 @@ namespace AngularWebClient
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            app.UseCors("AllRequests");
+            app.UseAuthentication();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
