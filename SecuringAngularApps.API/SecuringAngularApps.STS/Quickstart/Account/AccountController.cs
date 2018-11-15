@@ -127,7 +127,7 @@ namespace IdentityServer4.Quickstart.UI
         /// initiate roundtrip to external authentication provider
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
+        private async Task<IActionResult> ExternalLogin(string provider, string returnUrl)
         {
             if (AccountOptions.WindowsAuthenticationSchemeName == provider)
             {
@@ -154,7 +154,7 @@ namespace IdentityServer4.Quickstart.UI
         /// Post processing of external authentication
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> ExternalLoginCallback()
+        private async Task<IActionResult> ExternalLoginCallback()
         {
             // read external identity from the temporary cookie
             var result = await HttpContext.AuthenticateAsync(IdentityConstants.ExternalScheme);
