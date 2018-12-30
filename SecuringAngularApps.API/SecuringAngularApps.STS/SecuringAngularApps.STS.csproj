@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="IdentityModel" Version="3.4.0" />
-    <PackageReference Include="IdentityServer4" Version="2.1.0" />
-    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.1" PrivateAssets="All" />
@@ -31,6 +29,12 @@
 
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Reference\Nuget\IdentityModel2\src\IdentityModel\IdentityModel.csproj" />
+    <ProjectReference Include="..\..\..\..\Reference\Nuget\IdentityServer4.AspNetIdentity\src\IdentityServer4.AspNetIdentity\IdentityServer4.AspNetIdentity.csproj" />
+    <ProjectReference Include="..\..\..\..\Reference\Nuget\IdentityServer4\src\IdentityServer4\IdentityServer4.csproj" />
   </ItemGroup>
 
 </Project>

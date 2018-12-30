@@ -16,19 +16,42 @@ namespace SecuringAngularApps.STS
 
         public static IEnumerable<Client> GetClients()
         {
+            string ngAppRoot = "http://localhost:4200";
+            string electronRoot = "file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist";
             return new List<Client>
             {
+                //new Client
+                //{
+                //    ClientId = "spa-client",
+                //    ClientName = "Projects SPA",
+                //    AllowedGrantTypes = GrantTypes.Implicit,
+                //    AllowAccessTokensViaBrowser = true,
+                //    RequireConsent = false,
+
+                //    RedirectUris =           { $"{ngAppRoot}/assets/oidc-login-redirect.html", $"{ngAppRoot}/assets/silent-redirect.html" },
+                //    PostLogoutRedirectUris = { $"{ngAppRoot}/?postLogout=true" },
+                //    AllowedCorsOrigins =     { ngAppRoot + "/" },
+
+                //    AllowedScopes =
+                //    {
+                //        IdentityServerConstants.StandardScopes.OpenId,
+                //        IdentityServerConstants.StandardScopes.Profile,
+                //        "projects-api"
+                //    },
+                //    IdentityTokenLifetime=120,
+                //    AccessTokenLifetime=120
+                //},
                 new Client
                 {
-                    ClientId = "spa-client",
+                    ClientId = "electron-client",
                     ClientName = "Projects SPA",
                     AllowedGrantTypes = GrantTypes.Implicit,
                     AllowAccessTokensViaBrowser = true,
                     RequireConsent = false,
 
-                    RedirectUris =           { "http://localhost:4200/assets/oidc-login-redirect.html","http://localhost:4200/assets/silent-redirect.html" },
-                    PostLogoutRedirectUris = { "http://localhost:4200/?postLogout=true" },
-                    AllowedCorsOrigins =     { "http://localhost:4200/" },
+                    RedirectUris =           { $"{electronRoot}/assets/oidc-login-redirect.html", $"{electronRoot}/assets/silent-redirect.html" },
+                    PostLogoutRedirectUris = { $"{electronRoot}/post-logout.html" },
+                    AllowedCorsOrigins =     { electronRoot + "/" },
 
                     AllowedScopes =
                     {
