@@ -2,7 +2,7 @@
     <mat-toolbar color="primary">
         <a href="/">
             <span>
-                <img src="/assets/images/Globo_logo.png" alt="Globomantics" title="Globomantics" class="globo-logo">
+                <img src="assets/images/Globo_logo.png" alt="Globomantics" title="Globomantics" class="globo-logo">
             </span>
         </a>
         <span class="navbar-fill">

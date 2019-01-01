@@ -20,7 +20,7 @@ export class AuthService {
       redirect_uri: `${Constants.clientRoot}assets/oidc-login-redirect.html`,
       scope: 'openid projects-api profile',
       response_type: 'id_token token',
-      post_logout_redirect_uri: `${Constants.clientRoot}?postLogout=true`,
+      post_logout_redirect_uri: `${Constants.clientRoot}post-logout.html`,
       userStore: new WebStorageStateStore({ store: window.localStorage }),
       automaticSilentRenew: true,
       silent_redirect_uri: `${Constants.clientRoot}assets/silent-redirect.html`

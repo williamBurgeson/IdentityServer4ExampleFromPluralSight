@@ -1,5 +1,15 @@
-import { app, BrowserWindow } from "electron";
-import * as path from "path";
+import { app, BrowserWindow, screen, Menu, ipcMain } from 'electron';
+import * as path from 'path';
+import * as url from 'url';
+import { autoUpdater } from 'electron-updater';
+
+let win, serve, menu;
+const args = process.argv.slice(1);
+serve = args.some(val => val === '--serve');
+const log = require('electron-log');
+autoUpdater.logger = log;
+const fs = require('fs');
+const localhostUrl = 'http://localhost:4200';
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -11,11 +21,23 @@ function createWindow() {
     webPreferences: { webSecurity: false }
   });
 
-  // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, "/dist/index.html"));
+  if (serve) {
+    require('electron-reload')(__dirname, {
+      electron: require(`${__dirname}/node_modules/electron`)
+    });
+    mainWindow.loadURL(localhostUrl);
+    mainWindow.webContents.openDevTools();
+  } else {
+    mainWindow.loadURL(url.format({
+      pathname: path.join(__dirname, 'dist/index.html'),
+      protocol: 'file:',
+      slashes: true
+    }));
+    mainWindow.webContents.openDevTools();
+  }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on("closed", () => {

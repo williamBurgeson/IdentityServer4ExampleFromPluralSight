@@ -17,7 +17,8 @@ namespace SecuringAngularApps.STS
         public static IEnumerable<Client> GetClients()
         {
             string ngAppRoot = "http://localhost:4199";
-            string electronRoot = "file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist";
+            string electronRoot = "http://localhost:4200";
+            //string electronRoot = "file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist";
             return new List<Client>
             {
                 new Client
