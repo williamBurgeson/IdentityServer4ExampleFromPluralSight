@@ -17,13 +17,13 @@ export class AuthService {
     var config = {
       authority: Constants.stsAuthority,
       client_id: Constants.clientId,
-      redirect_uri: `${Constants.clientRoot}/assets/oidc-login-redirect.html`,
+      redirect_uri: `${Constants.clientRoot}assets/oidc-login-redirect.html`,
       scope: 'openid projects-api profile',
       response_type: 'id_token token',
-      post_logout_redirect_uri: `${Constants.clientRoot}/post-logout.html`,
+      post_logout_redirect_uri: `${Constants.clientRoot}post-logout.html`,
       userStore: new WebStorageStateStore({ store: window.localStorage }),
       automaticSilentRenew: true,
-      silent_redirect_uri: `${Constants.clientRoot}/assets/silent-redirect.html`
+      silent_redirect_uri: `${Constants.clientRoot}assets/silent-redirect.html`
     };
     this._userManager = new UserManager(config);
     this._userManager.getUser().then(user => {

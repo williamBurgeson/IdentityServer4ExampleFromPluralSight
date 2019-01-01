@@ -22,8 +22,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log('__dirname: ' + __dirname)
-
     if (window.location.href.indexOf('?postLogout=true') > 0) {
       this._authService.signoutRedirectCallback().then(() => {
         let url: string = this._router.url.substring(

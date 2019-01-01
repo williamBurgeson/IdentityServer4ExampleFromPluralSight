@@ -16,31 +16,31 @@ namespace SecuringAngularApps.STS
 
         public static IEnumerable<Client> GetClients()
         {
-            string ngAppRoot = "http://localhost:4200";
+            string ngAppRoot = "http://localhost:4199";
             string electronRoot = "file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist";
             return new List<Client>
             {
-                //new Client
-                //{
-                //    ClientId = "spa-client",
-                //    ClientName = "Projects SPA",
-                //    AllowedGrantTypes = GrantTypes.Implicit,
-                //    AllowAccessTokensViaBrowser = true,
-                //    RequireConsent = false,
+                new Client
+                {
+                    ClientId = "spa-client",
+                    ClientName = "Projects SPA",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowAccessTokensViaBrowser = true,
+                    RequireConsent = false,
 
-                //    RedirectUris =           { $"{ngAppRoot}/assets/oidc-login-redirect.html", $"{ngAppRoot}/assets/silent-redirect.html" },
-                //    PostLogoutRedirectUris = { $"{ngAppRoot}/?postLogout=true" },
-                //    AllowedCorsOrigins =     { ngAppRoot + "/" },
+                    RedirectUris =           { $"{ngAppRoot}/assets/oidc-login-redirect.html", $"{ngAppRoot}/assets/silent-redirect.html" },
+                    PostLogoutRedirectUris = { $"{ngAppRoot}/?postLogout=true" },
+                    AllowedCorsOrigins =     { ngAppRoot + "/" },
 
-                //    AllowedScopes =
-                //    {
-                //        IdentityServerConstants.StandardScopes.OpenId,
-                //        IdentityServerConstants.StandardScopes.Profile,
-                //        "projects-api"
-                //    },
-                //    IdentityTokenLifetime=120,
-                //    AccessTokenLifetime=120
-                //},
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OpenId,
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "projects-api"
+                    },
+                    IdentityTokenLifetime=120,
+                    AccessTokenLifetime=120
+                },
                 new Client
                 {
                     ClientId = "electron-client",

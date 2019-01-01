@@ -13,6 +13,6 @@ export class Constants {
   //public static clientId = 'FVZYzaiuyFYR4bxPTtSriqNLgAE69Btn'; //softinsight
 
   //public static clientRoot = 'http://localhost:4200/';
-  public static clientRoot = 'file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist';
+  public static clientRoot = 'file://C:/DevWork/Experimental/IdentityServer4ExampleFromPluralSight/ElectronClient/dist/';
   //public static clientRoot = `file://${{ ...__dirname }.replace('\\', '/')}`;
 }
